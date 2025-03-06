@@ -11,15 +11,24 @@ It ensures efficient secret key loading by initializing keys only once at applic
 Project Struture
 
 src/main/java/com/util/crypto/extension/
+
 │── deployment/
+
 │   ├── CryptoUtilExtensionProcessor.java  # Registers AESUtil as a CDI bean
+
 │── runtime/
+
 │   ├── AESUtil.java                        # AES encryption/decryption logic
+
 │   ├── RSAUtil.java                        # RSA encryption/decryption logic (if needed)
+
 │   ├── AESUtilProducer.java                 # Produces multiple AESUtil instances
+
 │   ├── AESConfigLoader.java                 # Loads secret keys only once at startup
+
 │
 └── com/siddhatech/person/
+
     ├── PersonResource.java                  # REST API for encryption & decryption
 
 
@@ -105,13 +114,21 @@ AESUtil aesUtil3;
 Encryption API
 
 @GET
+
 @Path("/encrypt/{text}")
+
 public Response encrypt(@PathParam("text") String text) {
+
     try {
+    
         Map<String, String> responseMap = new HashMap<>();
+        
         responseMap.put("encryptedText1", aesUtil1.encrypt(text));
+        
         responseMap.put("encryptedText2", aesUtil2.encrypt(text));
+        
         responseMap.put("encryptedText3", aesUtil3.encrypt(text));
+        
 
         return Response.ok(responseMap).build();
     } catch (Exception e) {
@@ -123,15 +140,24 @@ public Response encrypt(@PathParam("text") String text) {
 
 
 @POST
+
 @Path("/decrypt")
+
 @Consumes(MediaType.APPLICATION_JSON)
+
 @Produces(MediaType.APPLICATION_JSON)
+
 public Response decrypt(Map<String, String> encryptedTexts) {
     try {
+    
         Map<String, String> responseMap = new HashMap<>();
+        
         responseMap.put("decryptedText1", aesUtil1.decrypt(encryptedTexts.get("encryptedText1")));
+        
         responseMap.put("decryptedText2", aesUtil2.decrypt(encryptedTexts.get("encryptedText2")));
+        
         responseMap.put("decryptedText3", aesUtil3.decrypt(encryptedTexts.get("encryptedText3")));
+        
 
         return Response.ok(responseMap).build();
     } catch (Exception e) {
@@ -144,20 +170,28 @@ public Response decrypt(Map<String, String> encryptedTexts) {
 
 Example Input (JSON) for /decrypt API:
 {
+
     "encryptedText1": "dUNa/8j2APH2rNRZ1E853q7xvvykFFw04mMo01hqIPo=",
+    
     "encryptedText2": "b825hcdSkn3VB2uYBe3Vsxc96Vxa1oL1KTMsMNEFFjs=",
+    
     "encryptedText3": "/9ixErJsFGePRM/Ik2kEywY7dQG3rDJSoj4TIQfzJgg="
 }
 
 Configuration (application.properties)
 Ensure that the secret keys are present in the main application's configuration file:
 
+
 security.aes.secretkey1=your-secret-key-1
+
 security.aes.secretkey2=your-secret-key-2
+
 security.aes.secretkey3=your-secret-key-3
 
 
+
 Key Features
+
 ✅ Multiple AES Instances → Each AESUtil instance is configured with a different secret key.
 ✅ Efficient Config Management → Secret keys are loaded only once at startup.
 ✅ Quarkus CDI Injection → Uses @Named qualifiers to inject different beans.
