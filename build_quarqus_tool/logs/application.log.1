@@ -1,0 +1,95 @@
+2025-03-05 14:57:28,272 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.quarkus] (Quarkus Main Thread) build_quarqus_tool 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.17.8) started in 0.673s. Listening on: http://localhost:8080
+2025-03-05 14:57:28,273 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-03-05 14:57:28,274 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [agroal, cdi, crypto-util-extension, hibernate-orm, hibernate-orm-panache, jdbc-mysql, narayana-jta, resteasy, resteasy-jackson, security, security-properties-file, smallrye-context-propagation, smallrye-openapi, swagger-ui, vertx]
+2025-03-05 14:57:28,275 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Live reload total time: 0.695s 
+2025-03-05 14:57:28,282 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.sid.per.PersonResource] (executor-thread-1) Received encrypted data for decryption: {encryptedText1=5CbV6n3OwlIZbdUrtmeYbQ==, encryptedText2=8lahC/7Msa6KkJhZINhILA==, encryptedText3=H2hS2aaLG0FeJPOV5xIO4g==}
+2025-03-05 14:57:28,283 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}OyKnvkewp/sqcqieQuaDACF9Jksr5Oh5FXi6XIpovqk=
+2025-03-05 14:57:28,285 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}E9DOkabvZmbIW9I5pQ8prp93HWFKMPnh+csfnbUfthc=
+2025-03-05 14:57:28,286 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}ktW2t3vyuCG7BwvevGJYg6MaGHN0gUvAptVMaQ7ggP
+2025-03-05 14:57:28,287 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.uti.cry.ext.run.AESUtil] (executor-thread-1) Invalid decryption key provided: Invalid AES key length: 31 bytes
+2025-03-05 14:57:28,288 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.uti.cry.ext.run.exc.ExceptionUtility] (executor-thread-1) Invalid decryption key provided:
+2025-03-05 14:57:28,289 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.sid.per.PersonResource] (executor-thread-1) Crypto error in AES decryption: {}: com.util.crypto.extension.runtime.exception.CryptoExceptionMessage: Invalid decryption key provided:
+	at com.util.crypto.extension.runtime.exception.ExceptionUtility.prepareCryptoExceptExceptionMessage(ExceptionUtility.java:29)
+	at com.util.crypto.extension.runtime.AESUtil.decrypt(AESUtil.java:81)
+	at com.util.crypto.extension.runtime.AESUtil.decrypt(AESUtil.java:39)
+	at com.util.crypto.extension.runtime.AESUtilProducer_ProducerMethod_createAESUtil3_-MkablcpyVrYrwlxQupcI_XBXsk_ClientProxy.decrypt(Unknown Source)
+	at com.siddhatech.person.PersonResource.decrypt(PersonResource.java:89)
+	at com.siddhatech.person.PersonResource_ClientProxy.decrypt(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:154)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:118)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.internalInvokeOnTarget(ResourceMethodInvoker.java:560)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTargetAfterFilter(ResourceMethodInvoker.java:452)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.lambda$invokeOnTarget$2(ResourceMethodInvoker.java:413)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:415)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:378)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:356)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:70)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:429)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:240)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:154)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:157)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:229)
+	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:84)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:151)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler$1.run(VertxRequestHandler.java:97)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:637)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2025-03-05 14:57:37,519 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.sid.per.PersonResource] (executor-thread-1) Received encrypted data for decryption: {encryptedText1=5CbV6n3OwlIZbdUrtmeYbQ==, encryptedText2=8lahC/7Msa6KkJhZINhILA==, encryptedText3=H2hS2aaLG0FeJPOV5xIO4g==}
+2025-03-05 14:57:37,520 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}OyKnvkewp/sqcqieQuaDACF9Jksr5Oh5FXi6XIpovqk=
+2025-03-05 14:57:37,520 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}E9DOkabvZmbIW9I5pQ8prp93HWFKMPnh+csfnbUfthc=
+2025-03-05 14:57:37,522 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [com.uti.cry.ext.run.AESUtil] (executor-thread-1)  Secret key for encryption::{}ktW2t3vyuCG7BwvevGJYg6MaGHN0gUvAptVMaQ7ggP
+2025-03-05 14:57:37,522 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.uti.cry.ext.run.AESUtil] (executor-thread-1) Invalid decryption key provided: Invalid AES key length: 31 bytes
+2025-03-05 14:57:37,523 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.uti.cry.ext.run.exc.ExceptionUtility] (executor-thread-1) Invalid decryption key provided:
+2025-03-05 14:57:37,523 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] ERROR [com.sid.per.PersonResource] (executor-thread-1) Crypto error in AES decryption: {}: com.util.crypto.extension.runtime.exception.CryptoExceptionMessage: Invalid decryption key provided:
+	at com.util.crypto.extension.runtime.exception.ExceptionUtility.prepareCryptoExceptExceptionMessage(ExceptionUtility.java:29)
+	at com.util.crypto.extension.runtime.AESUtil.decrypt(AESUtil.java:81)
+	at com.util.crypto.extension.runtime.AESUtil.decrypt(AESUtil.java:39)
+	at com.util.crypto.extension.runtime.AESUtilProducer_ProducerMethod_createAESUtil3_-MkablcpyVrYrwlxQupcI_XBXsk_ClientProxy.decrypt(Unknown Source)
+	at com.siddhatech.person.PersonResource.decrypt(PersonResource.java:89)
+	at com.siddhatech.person.PersonResource_ClientProxy.decrypt(Unknown Source)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:154)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:118)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.internalInvokeOnTarget(ResourceMethodInvoker.java:560)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTargetAfterFilter(ResourceMethodInvoker.java:452)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.lambda$invokeOnTarget$2(ResourceMethodInvoker.java:413)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:415)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:378)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:356)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:70)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:429)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:240)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:154)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:157)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:229)
+	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:84)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:151)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler$1.run(VertxRequestHandler.java:97)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:637)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2025-03-05 14:57:48,638 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-5) File change detected: D:\Shubham Practice Data\Quarkus Framework\build_quarqus_tool\src\main\resources\application.properties
+2025-03-05 14:57:48,640 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-5) Restarting quarkus due to changes in application.properties.
+2025-03-05 14:57:48,652 dell C:\Program Files\Java\jdk-21\bin\java.exe[3472] INFO  [io.quarkus] (Quarkus Main Thread) build_quarqus_tool stopped in 0.011s

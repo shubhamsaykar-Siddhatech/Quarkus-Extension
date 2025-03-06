@@ -1,0 +1,12 @@
+---
+name: "Crypto Util Extension"
+metadata:
+  built-with-quarkus-core: "3.19.1"
+  requires-quarkus-core: "[3.19,)"
+  minimum-java-version: "17"
+  extension-dependencies:
+  - "io.quarkus:quarkus-arc"
+  - "io.quarkus:quarkus-core"
+classifier: "runtime"
+runtime-artifact: "com.util:crypto-util-extension"
+artifact: "com.util:crypto-util-extension::jar:1.0.0"
